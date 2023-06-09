@@ -9,7 +9,7 @@ describe('My First Test Suite', function() {
         
         //Handling Frames with Cypress using real time example
         //Need to install plugin-in npm install -D cypress-iframe
-        cy.visit(Cypress.env('url')+"/AutomationPractice/");
+        //cy.visit(Cypress.env('url')+"/AutomationPractice/");
         //Get frame by going to developer tools and locate it in the DOM
         cy.frameLoaded('#courses-iframe')
         //When you switch to iframe mode you are seeing what other frames loaded into your object
