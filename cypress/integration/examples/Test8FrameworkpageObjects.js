@@ -1,15 +1,20 @@
 /// <reference types="Cypress" />
-import homePage from "./pageObjects/homePage"
-import productPage from "./pageObjects/productPage"
+import homePage from "../pageObjects/homePage"
+import productPage from "../pageObjects/productPage"
 
+//Implementing Page object Design pattern into Cypress
 
 describe('My First Test Suite', function() {
     it('My ninth test case', function() {
-        
+        //Created object for our class homePage()
+        //Now I can pull all methods from the objects class
         const homePage = new homePage()
         const productPage = new ProductPage()
         Cypress.env('url')
         cy.visit(Cypress.env('url')+"/angularpractice/")
+        
+       // Modifying existing tests into Page object pattern as per Cypress standards
+
         homePage.getEditBox().type(this.data.name)
         homePage.getGender().select(this.data.gender)
         homePage.getTwoWayDataBinding().should('have.value',this.data.name)
@@ -18,6 +23,7 @@ describe('My First Test Suite', function() {
 
         homePage.getShopTab().click()
         Cypress. config('defaultCommandTimeout',8000)
+        //Change timeout for specified spec file not globally
 
         //Iterate through array in js
 
@@ -32,6 +38,7 @@ describe('My First Test Suite', function() {
             //grab the text of jQuery method
             const amount=$el.text()
             //splitting whitespace from product price string to remove ($.) from the 50000
+            //res/result
             var res= actualText.split(" ")
             res = res[1].trim()
             sum = Number(sum)+Number(res)
@@ -51,7 +58,7 @@ describe('My First Test Suite', function() {
                 //splitting whitespace from product price string to remove ($.) from the 50000
                 var res= amount.split(" ")
                 var total = res[1].trim()
-                expect(Number(total)).to.equall(sum)
+                expect(Number(total)).to.equal(sum)
             })
         cy.contains('Checkout').click()
         cy.get('#country').type('India')

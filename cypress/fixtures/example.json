@@ -3,5 +3,6 @@
   "gender": "Male",
   "email": "daequantsmith@gmail.com",
   "password": "dTs69313@!",
-  "birthdate": "1994-06-24"
+  "birthdate": "1994-06-24",
+  "productName": ["Blackberry","Nokia Edge"]
 }

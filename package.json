@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordDashboardTest": "npm run test --record --key f6844d1b-a8e2-4d29-b755-0ac847d5f612 --reporter mochawesome",
+    //this command records your test in dashboard and using the flag --reporter mochawesome creates a report for it.
   },
   "author": "",
   "license": "ISC",
