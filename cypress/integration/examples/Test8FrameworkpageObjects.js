@@ -5,6 +5,16 @@ import productPage from "../pageObjects/productPage"
 //Implementing Page object Design pattern into Cypress
 
 describe('My First Test Suite', function() {
+
+    beforeEach(()=>
+{
+    cy.fixture('example').then(function(data)
+    {
+this.data = data
+    })
+});
+
+
     it('My ninth test case', function() {
         //Created object for our class homePage()
         //Now I can pull all methods from the objects class
